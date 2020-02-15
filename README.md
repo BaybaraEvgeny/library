@@ -5,12 +5,12 @@
 Install the dependencies and start the server.
 
 ```sh
-$ git clone https://github.com/BaybaraEvgeny/library.git
-$ cd library
-$ composer install
-$ php bin/console doctrine:database:create
-$ php bin/console doctrine:migrations:migrate
-$ php bin/console server:start
+git clone https://github.com/BaybaraEvgeny/library.git
+cd library
+composer install
+php bin/console doctrine:database:create
+php bin/console doctrine:migrations:migrate
+symfony server:start
 ```
 
 Your server address in your preferred browser: **localhost:8000**
