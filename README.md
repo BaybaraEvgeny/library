@@ -5,6 +5,7 @@
 Install the dependencies and start the server.
 
 ```sh
+$ git clone git@github.com:BaybaraEvgeny/library.git
 $ cd library
 $ composer install
 $ php bin/console doctrine:database:create
