@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Books{% endblock %}
+
+{% block body %}
+    <div class="containers">
+        <h1 class="m-2 mw-50 d-inline">
+            <a href="{{ path('book_index') }}" style="text-decoration: none; color: black">Library</a>
+        </h1>
+
+        <form action="{{ path('book_new') }}"
+              class="d-inline m-2">
+            <button class="btn btn-primary">Create New Book</button>
+        </form>
+
+        <table class="table m-1 table-striped table-hover">
+            <thead>
+            <tr>
+                <th>Name</th>
+                <th>Year</th>
+                <th>Author</th>
+                <th>actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for book in books %}
+                <tr>
+                    <td>{{ book.Name }}</td>
+                    <td>{{ book.Year }}</td>
+                    <td>{{ book.Author }}</td>
+                    <td>
+                        <form action="{{ path('book_edit', {'id': book.id}) }}"
+                              class="d-inline">
+                            <button class="btn btn-primary">Edit</button>
+                        </form>
+                        {{ include('book/_delete_form.html.twig') }}
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="5">no records found</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+
+    </div>
+{% endblock %}
